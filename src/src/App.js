@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar/>
+      <MainContent/>
     </div>
   );
+}
+
+function NavBar() {
+  return (
+    <nav></nav>
+  )
+}
+
+function ContentDiv({children, otherClasses}) {
+  let classes = "content-div " + otherClasses
+  return(
+    <div className={classes}>
+      {children}
+    </div>
+  )
+}
+
+function MainContent() {
+ return (
+  <ContentDiv otherClasses={"main-content"}>
+    <h1>What If?</h1>
+  </ContentDiv>
+ )
 }
 
 export default App;
