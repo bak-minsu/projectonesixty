@@ -15,7 +15,7 @@ function App() {
 function NavBar() {
   return (
     <nav>
-      A Site for Project One Sixty
+      <h1>Sample Nav Title</h1>
     </nav>
   )
 }
@@ -44,7 +44,9 @@ function MainContent() {
 
 function Image({image, alt}){
   return (
-    <img src={image} alt={alt}></img>
+    <div class="img-div">
+      <img src={image} alt={alt}></img>
+    </div>
   )
 }
 
