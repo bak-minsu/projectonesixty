@@ -1,14 +1,21 @@
 :root{
-  --background-color: #282c34;
-  --font-color: white;
+  --background-color: #234454;
+  --fill-color: rgba(255, 255, 255, .4);
+  --font-color: #d9d9d9;
   --link-color: #61dafb;
+  --border-color: #a2a8ab;
+}
+
+body {
+  background-color: var(--background-color);
 }
 
 .App {
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
-  background-color: var(--background-color);
-  min-height: 100vh;
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
@@ -21,21 +28,33 @@
 }
 
 .content-div {
-  border: solid 2px grey;
-  border-radius: 10px;
+  border: solid 2px var(--border-color);
+  border-radius: 7px;
   width: 100%;
-  margin: 15px 0;
-}
-
-.main-content {
-  height: 2000px;
+  margin: 15px 0 50px 0;
 }
 
 nav {
-  background-color: rgba(255, 255, 255, .4);
+  background-color: var(--fill-color);
   height: 60px;
-  border: solid 2px grey;
-  border-radius: 10px;
+  border: solid 2px var(--border-color);
+  border-radius: 0 0 10px 10px;
   width: 100%;
-  margin: 15px 0;
+  margin: 0 0 15px 0;
+  color: white;
+}
+
+img {
+  background-color: var(--fill-color);
+  border-radius: 30px;
+  width: 50%;
+  height: auto;
+}
+
+.text-content {
+  margin: 20px 30px;
+}
+
+.title {
+  margin: 15px 0 0 0;
 }
