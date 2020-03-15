@@ -1,5 +1,5 @@
 :root{
-  --background-color: #23353d;
+  --background-color: #d4d4d4;
   --fill-color: rgba(255, 255, 255, .4);
   --fill-color-two: #223e4a;
   --font-color: #d9d9d9;
@@ -29,21 +29,22 @@ body {
 }
 
 .content-div {
-  border: solid 2px var(--border-color);
-  border-radius: 7px;
   background-color: var(--fill-color-two);
   width: 100%;
   margin: 15px 0 50px 0;
+  border-radius: 10px;
+}
+
+.border {
+  border: solid 2px var(--border-color);
 }
 
 nav {
-  background-color: var(--fill-color);
+  background-color: var(--fill-color-two);
   height: 60px;
-  border: solid 2px var(--border-color);
-  border-radius: 0 0 10px 10px;
   width: 100%;
   margin: 0 0 15px 0;
-  color: white;
+  border-radius: 0 0 10px 10px;
 }
 
 nav > h1 {

@@ -14,7 +14,7 @@ function App() {
 
 function NavBar() {
   return (
-    <nav>
+    <nav class="border">
       <h1>Sample Nav Title</h1>
     </nav>
   )
@@ -31,7 +31,7 @@ function ContentDiv({children, otherClasses}) {
 
 function MainContent() {
  return (
-  <ContentDiv otherClasses={"main-content"}>
+  <ContentDiv otherClasses={"main-content border"}>
     <Title>What If?</Title>
     <TextContent>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in malesuada libero, eget laoreet lectus. Aliquam finibus dapibus ligula, sit amet tincidunt dui posuere non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer porttitor tempus tortor ut dictum. Maecenas placerat orci sit amet nisi luctus, porta euismod ipsum sagittis. Nullam nec malesuada diam. Suspendisse eget ante urna.</TextContent>
     <Image image={camera} alt={"camera"}/>
