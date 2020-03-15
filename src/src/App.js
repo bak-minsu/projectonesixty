@@ -1,22 +1,34 @@
 import React from 'react';
 import './App.css';
-import camera from './img/camera.png'
-import flower from './img/flower.png'
+import camera from './img/camera.png';
+import flower from './img/flower.png';
+import { FaHome, FaHotel, FaArrowUp } from 'react-icons/fa';
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
       <MainContent/>
+      <GoTopButton/>
     </div>
   );
 }
 
 function NavBar() {
   return (
-    <nav class="border">
-      <h1>Sample Nav Title</h1>
+    <nav id="nav" className="border">
+      <NavButton icon={<FaHome/>} text={"Home"} route={"/"}/>
+      <NavButton icon={<FaHotel/>} text={"About"} route={"/"}/>
     </nav>
+  )
+}
+
+function NavButton({text, route, icon}) {
+  return (
+    <a className="nav-button" href={route}>
+      {icon}
+      <p>{text}</p>
+    </a>
   )
 }
 
@@ -44,7 +56,7 @@ function MainContent() {
 
 function Image({image, alt}){
   return (
-    <div class="img-div">
+    <div className="img-div">
       <img src={image} alt={alt}></img>
     </div>
   )
@@ -52,14 +64,45 @@ function Image({image, alt}){
 
 function Title({children}) {
   return (
-    <h1 class="title">{children}</h1>
+    <h1 className="title">{children}</h1>
   )
 }
 
 function TextContent({children}) {
   return (
-    <p class="text-content">{children}</p>
+    <p className="text-content">{children}</p>
   )
+}
+
+class GoTopButton extends React.Component {
+  componentDidMount() {
+    const button = document.getElementById("go-top");
+
+    const topFunction = () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+    button.onclick = topFunction;
+
+    const scrollFunction = () => {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = "block";
+      } else {
+        button.style.display = "none";
+      }
+    }
+
+    window.onscroll = scrollFunction;
+  }
+
+  render() {
+    return (
+      <button id="go-top" title="Go to the Top">
+        <FaArrowUp/>
+      </button>
+    )
+  }
 }
 
 export default App;

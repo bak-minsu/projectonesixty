@@ -9,6 +9,7 @@
     "gh-pages": "^2.2.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-icons": "^3.9.0",
     "react-scripts": "3.4.0"
   },
   "devDependencies": {
@@ -16,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "deploy": "gh-pages -d build -t",
+    "deploy": "react-scripts build && ../scripts/deploy.sh && gh-pages -d build -t",
     "build": "react-scripts build && ../scripts/deploy.sh",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
