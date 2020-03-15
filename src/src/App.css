@@ -3,8 +3,9 @@
   --fill-color: rgba(255, 255, 255, .4);
   --fill-color-two: #223e4a;
   --font-color: #f0f0f0;
+  --font-color-dark: #9aa0b8;
   --link-color: #61dafb;
-  --border-color: #a2a8ab;
+  --border-color: #657099;
 }
 
 html {
@@ -36,7 +37,7 @@ a {
 .content-div {
   background-color: var(--fill-color-two);
   width: 100%;
-  margin: 15px 0 50px 0;
+  margin: 15px 0;
   border-radius: 10px;
 }
 
@@ -46,28 +47,35 @@ a {
 
 nav {
   background-color: var(--fill-color-two);
-  height: 40px;
   width: 100%;
   border-radius: 0 0 10px 10px;
   padding-top: 5px;
 }
 
-.nav-button {
-  margin: 0 10px;
+nav > p, nav > h1 {
+  margin: 5px 0;
 }
 
-nav > a > p, nav > a > svg {
+nav > p {
+  font-size: 12px;
+}
+
+.nav-button {
+  display: inline-block;
+  margin: 0 10px;
+  height: 35px;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+.nav-button > p, .nav-button > svg {
   display: inline;
   margin: 0 2px;
 }
 
-nav > a > svg {
-  margin-top: 5px;
-}
-
-.nav-button {
-  text-decoration: none;
-  font-size: 25px;
+.nav-button:hover {
+  background-color: var(--fill-color)
 }
 
 .nav-button {
@@ -108,4 +116,10 @@ img {
   cursor: pointer;
   padding: 15px;
   border-radius: 50%;
+}
+
+.footer {
+  padding-bottom: 5px;
+  color: var(--font-color-dark);
+  font-size: 15px;
 }
