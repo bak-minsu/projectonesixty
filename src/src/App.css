@@ -2,6 +2,7 @@
   --background-color: #d4d4d4;
   --fill-color: rgba(255, 255, 255, .4);
   --fill-color-two: #223e4a;
+  --fill-color-three: #ffd36b;
   --font-color: #f0f0f0;
   --font-color-dark: #9aa0b8;
   --link-color: #61dafb;
@@ -67,6 +68,7 @@ nav > p {
   text-decoration: none;
   font-size: 25px;
   border-radius: 10px;
+  color: var(--font-color)
 }
 
 .nav-button > p, .nav-button > svg {
@@ -78,8 +80,9 @@ nav > p {
   background-color: var(--fill-color)
 }
 
-.nav-button {
-  color: var(--font-color)
+.nav-button > svg {
+  position: relative;
+  top: 3px;
 }
 
 .img-div {
@@ -111,8 +114,8 @@ img {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: var(--fill-color-two);
-  color: white;
+  background-color: var(--fill-color-three);
+  color: #bdb299;
   cursor: pointer;
   padding: 15px;
   border-radius: 50%;
