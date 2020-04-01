@@ -3,7 +3,7 @@ import './App.css';
 import camera from './img/camera.png';
 import flower from './img/flower.png';
 import duck from './img/duck.png';
-import { FaHome, FaHotel, FaArrowUp } from 'react-icons/fa';
+import { FaHome, FaHotel, FaArrowUp, FaBook } from 'react-icons/fa';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,11 +15,11 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar/>
+        <TopArea/>
         <Switch>
           <Route exact path="/" component={MainContent}/>
-          <Route exact path="/about" component={About}>
-          </Route>
+          <Route exact path="/about" component={About}/>
+          <Route exact path="/sources" component={Sources}/>
         </Switch>
         <GoTopButton/>
         <Footer/>
@@ -28,13 +28,23 @@ function App() {
   );
 }
 
+function TopArea() {
+  return (
+    <header>
+      <div id="toparea" className="border">
+        <h1>HST 160 What-If Project</h1>
+      </div>
+      <NavBar/>
+    </header>
+  )
+}
+
 function NavBar() {
   return (
-    <nav id="nav" className="border">
-      <h1>HST 160 What-If Project</h1>
-      <p>By Naomi Henderson, Timothy Luft, Ryan McCauley, Min Park, Rachel Yao</p>
+    <nav>
       <NavButton icon={<FaHome/>} text={"Home"} route={"/"}/>
       <NavButton icon={<FaHotel/>} text={"About"} route={"/about"}/>
+      <NavButton icon={<FaBook/>} text={"Sources"} route={"/sources"}/>
     </nav>
   )
 }
@@ -99,6 +109,25 @@ function About(){
       <TextContent></TextContent>
       <Image image={duck} alt={"camera"}/>
     </ContentDiv>
+  )
+}
+
+function Sources(){
+  return (
+    <div id="sources-div">
+      <ContentDiv otherClasses={"sources-content border"}>
+        <Title>Source 1</Title>
+        <TextContent></TextContent>
+      </ContentDiv>
+      <ContentDiv otherClasses={"sources-content border"}>
+        <Title>Source 2</Title>
+        <TextContent></TextContent>
+      </ContentDiv>
+      <ContentDiv otherClasses={"sources-content border"}>
+        <Title>Source 3</Title>
+        <TextContent></TextContent>
+      </ContentDiv>
+    </div>
   )
 }
 
