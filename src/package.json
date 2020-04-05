@@ -18,8 +18,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "deploy": "react-scripts build && ../scripts/deploy.sh && gh-pages -d build -t",
-    "build": "react-scripts build && ../scripts/deploy.sh",
+    "deploy": "react-scripts build && bash ../scripts/deploy.sh && gh-pages -d build -t",
+    "build": "react-scripts build && bash ../scripts/deploy.sh",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve": "serve -s build"

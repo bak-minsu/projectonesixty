@@ -1,11 +1,12 @@
 :root{
   /* https://colorhunt.co/palette/178346 */
-  --background-color: #faf4ff;
   --fill-color-one: rgba(255, 255, 255, .4);
   --fill-color-two: #10375c;
   --fill-color-three: #f3c623;
   --fill-color-four: #844685;
-  --font-color: #f0f0f0;
+  --fill-color-five: #faf4ff;
+  --background-color: var(--fill-color-two);
+  --font-color: #303030;
   --font-color-dark: #9aa0b8;
   --link-color: #61dafb;
   --border-color: #9aa0b8;
@@ -17,6 +18,15 @@ html {
 
 body {
   background-color: var(--background-color);
+}
+
+/* Overrides button styles */
+button {
+  border: 0;
+  padding: 0;
+  outline: none;
+  background-color: transparent;
+  font-family: inherit;
 }
 
 .App {
@@ -34,11 +44,12 @@ body {
 }
 
 a {
+  text-decoration: none;
   color: var(--link-color);
 }
 
 .content-div {
-  background-color: var(--fill-color-two);
+  background-color: var(--fill-color-five);
   width: 100%;
   margin: 15px 0;
   border-radius: 10px;
@@ -53,10 +64,11 @@ header {
 }
 
 #toparea {
-  background-color: var(--fill-color-two);
+  background-color: var(--fill-color-five);
   width: 100%;
   height: 100px;
   border-radius: 0 0 10px 10px;
+  border-bottom: solid 5px var(--border-color);
   padding-top: 30px;
 }
 
@@ -73,7 +85,6 @@ nav {
 
 nav > a {
   flex-grow: 1;
-  text-decoration: none;
   margin: 0 10px;
 }
 
@@ -85,8 +96,8 @@ nav > a {
   font-size: 25px;
   border-radius: 0 0 10px 10px;
   color: var(--font-color);
-  background-color: var(--fill-color-two);
-  transition: height 1s;
+  background-color: var(--fill-color-five);
+  transition: height 0.5s ease-in;
 }
 
 .nav-button:hover {
@@ -96,7 +107,6 @@ nav > a {
 .nav-button > p {
   position: relative;
   height: 25px;
-  top: 4px;
 }
 
 .nav-button > p, .nav-button > svg {
@@ -106,6 +116,8 @@ nav > a {
 
 .img-div {
   background-color: var(--fill-color-one);
+  border-bottom: solid 3px var(--border-color);
+  border-top: solid 3px var(--border-color);
 }
 
 img {
@@ -142,6 +154,72 @@ img {
   cursor: pointer;
   padding: 15px;
   border-radius: 50%;
+}
+
+#authors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 30px 50px;
+}
+
+.author-button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer; 
+}
+
+.author-picture {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  filter: blur(1px) grayscale(60%);
+  transition: width 0.2s ease-in, height 0.2s ease-in, filter 0.2s ease-in;
+  user-select: none;
+  display: block;
+}
+
+.author-picture:hover {
+  filter: blur(0) grayscale(0);
+}
+
+.selected {
+  height: 110px;
+  width: 110px;
+  filter: blur(0) grayscale(0);
+}
+
+.author-name {
+  margin: 5px 0 0 0;
+  font-size: 20px;
+  display: block;
+}
+
+.author-picture > img {
+  height: auto;
+  width: 100%;
+  transition-delay: 0.5s;
+  transition: width 0.5s ease-in, height 0.5s ease-in;
+  border-radius: 0;
+  -webkit-user-drag: none;
+}
+
+.about-description {
+  border: solid 2px var(--fill-color-four);
+  border-radius: 5px;
+  margin: 0 auto 20px auto;
+  width: 90%;
+  height: 300px;
+  overflow: hidden;
+  transition: height 0.5s ease-in;
+}
+
+.hidden-description {
+  height: 0;
+  border: 0;
+  margin: 0;
 }
 
 .footer {
