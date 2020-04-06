@@ -125,32 +125,32 @@ class Authors extends React.Component {
       "henderson": {
         image: notfound, 
         name: "Naomi Henderson", 
-        title: "Content Writer", 
-        description: "N/A"
+        title: "Lead Content Writer", 
+        description: "Main writer and organizer of main website content."
       },
       "luft": {
         image: notfound, 
         name: "Timothy Luft", 
         title: "Storyboard Designer", 
-        description: "N/A"
+        description: "Created storyboard based on website content."
       },
       "mccauley": {
         image: notfound, 
         name: "Ryan McCauley", 
         title: "Website Designer", 
-        description: "N/A"
+        description: "Designed website layout and functionality."
       },
       "park": {
         image: park, 
         name: "Min Su Park", 
         title: "Web Developer", 
-        description: "N/A"
+        description: "Programmed and implemented website design."
       },
       "yao": {
         image: notfound, 
         name: "Rachel Yao", 
         title: "Lead Cartoonist", 
-        description: "N/A"
+        description: "Sketched main comics of the site based on storyboard."
       }
     }
   }
@@ -167,23 +167,19 @@ class Authors extends React.Component {
     }
   }
 
-  description(){
-    return <Description hidden={(this.state.selected === null)} lastname={this.state.selected} lastNameMap={this.lastNameMap}/>
-  }
-
   render() {
     let lastnames = ["henderson", "luft", "mccauley", "park", "yao"]
     let pictures = []
-    for (const [index, value] of lastnames.entries()) {
-      let selected = (this.state.selected === value);
-      pictures.push(<AuthorPicture selected={selected} lastname={value} onClick={this.openDescription.bind(this, value)} lastNameMap={this.lastNameMap} key={index}/>)
+    for (const [index, lastname] of lastnames.entries()) {
+      let selected = (this.state.selected === lastname);
+      pictures.push(<AuthorPicture selected={selected} lastname={lastname} onClick={this.openDescription.bind(this, lastname)} lastNameMap={this.lastNameMap} key={index}/>)
     }
     return (
       <div id="description-div">
         <div id="authors">
           {pictures}
         </div>
-        {this.description()}
+        <Description lastname={this.state.selected} lastNameMap={this.lastNameMap}/>
       </div>
     )
   }
@@ -203,21 +199,21 @@ function AuthorPicture({selected, lastname, onClick, lastNameMap}){
   )
 }
 
-function Description({lastname, lastNameMap, hidden}){
-  let className = null;
+function Description({lastname, lastNameMap}){
+  let hidden = null;
   let name = null;
   let title = null;
   let description = null;
-  if(!hidden){
+  if(lastname != null){
     name = lastNameMap[lastname].name;
     title = lastNameMap[lastname].title;
     description = lastNameMap[lastname].description;
-    className = ""
+    hidden = ""
   } else {
-    className = "hidden-description"
+    hidden = "hidden"
   }
   return (
-    <div className={"about-description " + className}>
+    <div className={"about-description " + hidden}>
       <h2>{name}</h2>
       <h3>{title}</h3>
       <p>{description}</p>

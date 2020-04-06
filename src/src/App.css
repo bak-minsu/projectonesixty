@@ -100,6 +100,10 @@ nav > a {
   transition: height 0.5s ease-in;
 }
 
+.nav-button.active {
+  color: var(--fill-color-three);
+}
+
 .nav-button:hover {
   height: 60px;
 }
@@ -175,7 +179,7 @@ img {
   width: 100px;
   border-radius: 50%;
   overflow: hidden;
-  filter: blur(1px) grayscale(60%);
+  filter: blur(2px) grayscale(100%);
   transition: width 0.2s ease-in, height 0.2s ease-in, filter 0.2s ease-in;
   user-select: none;
   display: block;
@@ -207,19 +211,42 @@ img {
 }
 
 .about-description {
-  border: solid 2px var(--fill-color-four);
+  background-color: #b4b5d1;
   border-radius: 5px;
   margin: 0 auto 20px auto;
   width: 90%;
-  height: 300px;
+  height: 150px;
+  max-width: 630px;
   overflow: hidden;
+  padding: 15px 0;
   transition: height 0.5s ease-in;
 }
 
-.hidden-description {
+.about-description.hidden {
   height: 0;
-  border: 0;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.about-description > h2 {
   margin: 0;
+  font-size: 40px;
+  color: rgba(0,0,0,0.80);
+}
+
+.about-description > h3 {
+  margin: 0;
+  font-size: 20px;
+  color: rgba(0,0,0,0.70);
+}
+
+.about-description > p {
+  margin: 15px 0 0 0;
+}
+
+.about-description > h2, .about-description > h3, .about-description > p {
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .footer {
