@@ -1,25 +1,37 @@
 {
   "files": {
-    "main.css": "/static/css/main.5305ea9b.chunk.css",
-    "main.js": "/static/js/main.c31ca7ca.chunk.js",
-    "main.js.map": "/static/js/main.c31ca7ca.chunk.js.map",
+    "main.css": "/static/css/main.b27c0431.chunk.css",
+    "main.js": "/static/js/main.4f9aa27d.chunk.js",
+    "main.js.map": "/static/js/main.4f9aa27d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e716be50.js",
     "runtime-main.js.map": "/static/js/runtime-main.e716be50.js.map",
-    "static/js/2.0ce0f5ec.chunk.js": "/static/js/2.0ce0f5ec.chunk.js",
-    "static/js/2.0ce0f5ec.chunk.js.map": "/static/js/2.0ce0f5ec.chunk.js.map",
+    "static/js/2.af440917.chunk.js": "/static/js/2.af440917.chunk.js",
+    "static/js/2.af440917.chunk.js.map": "/static/js/2.af440917.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.2b43e13e520aa68a5369475dfd8567b4.js": "/precache-manifest.2b43e13e520aa68a5369475dfd8567b4.js",
+    "precache-manifest.8e315f5011e343037cf8cdf0adf14006.js": "/precache-manifest.8e315f5011e343037cf8cdf0adf14006.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.5305ea9b.chunk.css.map": "/static/css/main.5305ea9b.chunk.css.map",
-    "static/js/2.0ce0f5ec.chunk.js.LICENSE.txt": "/static/js/2.0ce0f5ec.chunk.js.LICENSE.txt",
-    "static/media/camera.png": "/static/media/camera.f027b17e.png",
-    "static/media/flower.png": "/static/media/flower.67d6346c.png",
-    "static/media/park.jpg": "/static/media/park.bb0ce5fb.jpg"
+    "static/css/main.b27c0431.chunk.css.map": "/static/css/main.b27c0431.chunk.css.map",
+    "static/js/2.af440917.chunk.js.LICENSE.txt": "/static/js/2.af440917.chunk.js.LICENSE.txt",
+    "static/media/barbie.png": "/static/media/barbie.992045f7.png",
+    "static/media/boy_toys.png": "/static/media/boy_toys.07fe1e30.png",
+    "static/media/doll.png": "/static/media/doll.0f9e5638.png",
+    "static/media/dollhouse.png": "/static/media/dollhouse.89309ac2.png",
+    "static/media/fdr_baby_photo.png": "/static/media/fdr_baby_photo.c71568e0.png",
+    "static/media/fdr_old.png": "/static/media/fdr_old.5a74525b.png",
+    "static/media/fdr_young.png": "/static/media/fdr_young.345cde8d.png",
+    "static/media/luft.jpg": "/static/media/luft.f7ac27d5.jpg",
+    "static/media/math.png": "/static/media/math.dc262cf1.png",
+    "static/media/mccauley.png": "/static/media/mccauley.0e1167e0.png",
+    "static/media/park.jpg": "/static/media/park.bb0ce5fb.jpg",
+    "static/media/toy1.png": "/static/media/toy1.01db6e1b.png",
+    "static/media/toy2.png": "/static/media/toy2.3f23ceb4.png",
+    "static/media/toy3.png": "/static/media/toy3.2f9a20fd.png",
+    "static/media/truck.png": "/static/media/truck.c1c80a94.png"
   },
   "entrypoints": [
     "static/js/runtime-main.e716be50.js",
-    "static/js/2.0ce0f5ec.chunk.js",
-    "static/css/main.5305ea9b.chunk.css",
-    "static/js/main.c31ca7ca.chunk.js"
+    "static/js/2.af440917.chunk.js",
+    "static/css/main.b27c0431.chunk.css",
+    "static/js/main.4f9aa27d.chunk.js"
   ]
 }
