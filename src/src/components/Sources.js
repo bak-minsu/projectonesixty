@@ -22,8 +22,10 @@ class ReturnToHome extends React.Component {
 
 class Sources extends React.Component{
   componentDidMount() {
-    const tag = sessionStorage.getItem("goto");
-    document.querySelector(`#${tag}`).scrollIntoView();
+    if(sessionStorage.getItem("goto") != "null" && sessionStorage.getItem("goto") != null) {
+      const tag = sessionStorage.getItem("goto");
+      document.getElementById(tag).scrollIntoView();
+    }
   }
 
   componentWillUnmount() {
