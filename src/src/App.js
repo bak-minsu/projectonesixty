@@ -6,9 +6,9 @@ import Sources from './components/Sources.js';
 import {Footer, GoTopButton} from './components/Common.js';
 import './App.css';
 import {
-  BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  BrowserRouter as Router
 } from "react-router-dom";
 
 function App() {
@@ -18,8 +18,8 @@ function App() {
         <TopArea/>
         <Switch>
           <Route exact path="/" component={MainContent}/>
-          <Route exact path="/about" component={About}/>
-          <Route exact path="/sources" component={Sources}/>
+          <Route path="/about" component={About}/>
+          <Route path="/sources"component={Sources}/>
         </Switch>
         <GoTopButton/>
         <Footer/>

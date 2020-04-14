@@ -4,7 +4,7 @@ import {ContentDiv, Title} from './Common.js';
 
 class ReturnToHome extends React.Component {
   returnToHome() {
-    window.location.href = sessionStorage.getItem("return");
+    window.location.href = "/#" + sessionStorage.getItem("return");
   }
 
   render() {
@@ -21,9 +21,16 @@ class ReturnToHome extends React.Component {
 }
 
 class Sources extends React.Component{
-  componentWillUnmount() {
-    sessionStorage.setItem("return", null)
+  componentDidMount() {
+    const tag = sessionStorage.getItem("goto");
+    document.querySelector(`#${tag}`).scrollIntoView();
   }
+
+  componentWillUnmount() {
+    sessionStorage.setItem("return", null);
+    sessionStorage.setItem("goto", null);
+  }
+
   render() {
     const sources = [
       {
@@ -78,9 +85,7 @@ class Source extends React.Component {
   }
 
   getTag(){
-    const url = window.location.href;
-    const tag_index = url.indexOf("#", 0);
-    return url.substring(tag_index+1);
+    return sessionStorage.getItem("goto");
   }
 
   render() {
@@ -90,9 +95,9 @@ class Source extends React.Component {
     const tag = this.getTag();
     const selected = (tag === shortcut) ? "selected" : "";
     return (
-      <button className={"sources-button media-changes " + selected} onClick={this.openLink.bind(this, url)}>
+      <button id={shortcut} className={"sources-button media-changes " + selected} onClick={this.openLink.bind(this, url)}>
         <LinkIcon/>
-        <ContentDiv id={shortcut} otherClasses="sources-content border">
+        <ContentDiv otherClasses="sources-content border">
           <Title>{title}</Title>
         </ContentDiv>
       </button>

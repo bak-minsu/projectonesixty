@@ -50,16 +50,17 @@ function ImagePanel({images, alt}) {
 }
 
 class SourceLink extends React.Component {
-  goToSource(source_id){
-    window.location.href = "/sources#"+source_id;
-    sessionStorage.setItem("return", "/#"+source_id)
+  goToSource(source_id, return_id){
+    sessionStorage.setItem("goto", source_id);
+    sessionStorage.setItem("return", return_id);
   }
 
   render() {
     let children = this.props.children;
     let source_id = this.props.source_id;
+    let return_id = this.props.return_id;
     return (
-      <Link id={source_id} data-tip="Link to Source" to={"/sources#"+source_id} className="source-link" onClick={this.goToSource.bind(this, source_id)}>
+      <Link id={return_id} data-tip="Link to Source" to={"/sources"} className="source-link" onClick={this.goToSource.bind(this, source_id, return_id)}>
         {children}
       </Link>
     )
@@ -92,7 +93,7 @@ function MainContent() {
       </TextContent>
       <ComicPanel images={fdr_young} alt={"FDR when he was young"}/>
       <TextContent>
-        <SourceLink source_id="dress">
+        <SourceLink source_id="dress" return_id="normal">
           This was pretty normal at the time because dresses were considered gender-neutral clothing for children during the 1800s.
         </SourceLink>
         1800s kids wore dresses until age 6, which is also when they got their first haircut. Society’s move toward pink and blue clothing for girls and boys, respectively, came about in the mid-1800s. It still took a long time for it to be woven into pop culture (hence young FDR pictured in a dress in the year 1884) 
@@ -109,7 +110,7 @@ function MainContent() {
       <ImagePanel images={[toy1, toy2, toy3]} alt={"FDR when he was young"}/>
       <TextContent>
         Some recognizable toys that fit the bill include LEGOs, Hungry Hungry Hippo, Twister, Rock ‘Em Sock ‘Em Robots, and Rubik’s Cube. 
-        <SourceLink source_id="harm">
+        <SourceLink source_id="harm" return_id="segregated">
           By the 1980s and 1990s, it was found that toys started to become more gender segregated as a result of the backlash from the feminist movement.
         </SourceLink>
       </TextContent>
@@ -126,7 +127,7 @@ function MainContent() {
         We would find that boys and girls aren’t that different in the early stages of their lives, if at all. This even applies to the development of math skills. (Link study Carnegie Mellon Study). This is a pretty cool new finding, since a number of scientists and public figures have cited neuroscience studies as explaining the gender disparity in STEM. 
       </TextContent>
       <TextContent>
-        <SourceLink source_id="brain">
+        <SourceLink source_id="brain" return_id="brain-activity">
           Studies have shown that brain activity in both men and women of all ages is similar when watching videos on math topics like counting and addition. 
         </SourceLink>
         There’s also no disparity in the rate at which kids and adults, regardless of gender or age, process mathematics skills. Furthermore, mathematical development is the same for both genders.
@@ -138,11 +139,11 @@ function MainContent() {
         </strong>
       </TextContent>
       <TextContent>
-        <SourceLink source_id="bias">
+        <SourceLink source_id="bias" return_id="underrepresented">
           Research suggests that females are underrepresented in STEM fields as a result of access to different kinds of toys than males. 
         </SourceLink>
         Imagine both boys and girls played with STEM toys growing up? This might be able to even out the difference! A STEM toy is any toy that improves or encourages spatial/mechanical learning and/or sparks curiosity, learning, and education relating to STEM. 
-        <SourceLink source_id="stem-toys">
+        <SourceLink source_id="stem-toys" return_id="stem-toys">
           Some common STEM toys include building block/tower sets, chemistry kits, robot kits, coding toys, train sets and telescopes. 
         </SourceLink>
       </TextContent>
@@ -157,7 +158,7 @@ function MainContent() {
       <ImagePanel images={[barbie, truck]} alt="Pink vs Blue"/>
       <TextContent>
         The purchasing pattern of adults may also be to blame for gender discrepancies in STEM. Early development of science and math skills through playing with STEM toys has been challenging for girls because of the 
-        <SourceLink source_id="bias">
+        <SourceLink source_id="bias" return_id="purchasing-pattern">
           purchasing patterns of adults. 
         </SourceLink>
         Researchers analyzed an entire dataset of customer reviews on specific STEM toys across MindWare.com and Amazon.com. Of course this is not the sole source of a child’s learning experiences, but it can be a pretty cool place to start when it comes to thinking about STEM education.
@@ -170,7 +171,7 @@ function MainContent() {
       </TextContent>
       <TextContent>
         In response to a 2016  conference about gender stereotypes in toys and media, Target has announced that they were getting rid of signs labeling toys for girls or for boys. Experts say that babies don’t show preference for certain toys over others and that it’s only once children learn about their own gender that they gain preferences. 
-        <SourceLink source_id="harm">
+        <SourceLink source_id="harm" return_id="preference">
           So, the way toys are marketed may have an influence in the development of a child’s toy preference.  
         </SourceLink>
         Source - the guardian. Today, the UK’s “Let Toys Be Toys” campaign has expanded by making its mission to get both toy and publishing industries to “stop limiting children’s interests by promoting some toys and books and boys as only suitable for girls, and others only for boys. 
