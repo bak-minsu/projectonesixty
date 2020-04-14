@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import {ContentDiv, Title, TextContent} from './Common.js';
+import { Link } from "react-router-dom";
 import { 
   boy_toys,
   doll,
@@ -58,9 +59,9 @@ class SourceLink extends React.Component {
     let children = this.props.children;
     let source_id = this.props.source_id;
     return (
-      <a data-tip="Link to Source" id={source_id} href={"/sources#"+source_id} className="source-link" onClick={this.goToSource.bind(this, source_id)}>
+      <Link id={source_id} data-tip="Link to Source" to={"/sources#"+source_id} className="source-link" onClick={this.goToSource.bind(this, source_id)}>
         {children}
-      </a>
+      </Link>
     )
   }
 }
