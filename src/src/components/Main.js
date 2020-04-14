@@ -128,8 +128,9 @@ function MainContent() {
         <SourceLink source_id="brain">
           Studies have shown that brain activity in both men and women of all ages is similar when watching videos on math topics like counting and addition. 
         </SourceLink>
-        There’s also no disparity in the rate at which kids and adults, regardless of gender or age, process mathematics skills. Furthermore, mathematical development is the same for both genders (Cite Carnegie Mellon again)
+        There’s also no disparity in the rate at which kids and adults, regardless of gender or age, process mathematics skills. Furthermore, mathematical development is the same for both genders.
       </TextContent>
+      <ComicPanel images={math} />
       <TextContent>
         <strong>
           Ok… so where do toys come back into the equation?

@@ -249,7 +249,7 @@ nav > a {
   width: 100px;
   border-radius: 50%;
   overflow: hidden;
-  filter: blur(2px) grayscale(100%);
+  filter: grayscale(100%);
   transition: width 0.2s ease-in, height 0.2s ease-in, filter 0.2s ease-in;
   user-select: none;
   display: block;
@@ -262,7 +262,7 @@ nav > a {
 .author-picture.selected {
   height: 110px;
   width: 110px;
-  filter: blur(0) grayscale(0);
+  filter: grayscale(0);
 }
 
 .author-name {
