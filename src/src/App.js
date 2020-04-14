@@ -1,10 +1,15 @@
 import React from 'react';
 import './App.css';
-import camera from './img/camera.png';
-import flower from './img/flower.png';
-import park from './img/park.jpg';
-import notfound from "./img/notfound.png";
 import { FaHome, FaHotel, FaArrowUp, FaBook } from 'react-icons/fa';
+import { 
+  camera, 
+  flower, 
+  henderson, 
+  luft, 
+  mccauley, 
+  park, 
+  yao 
+} from "./Images.js";
 import {
   BrowserRouter as Router,
   Switch,
@@ -61,10 +66,10 @@ function NavButton({text, route, icon}) {
   )
 }
 
-function ContentDiv({children, otherClasses}) {
+function ContentDiv({children, id, otherClasses}) {
   let classes = "content-div " + otherClasses
   return(
-    <div className={classes}>
+    <div className={classes} id={id}>
       {children}
     </div>
   )
@@ -121,38 +126,6 @@ class Authors extends React.Component {
     this.state = {
       selected: null
     }
-    this.lastNameMap = {
-      "henderson": {
-        image: notfound, 
-        name: "Naomi Henderson", 
-        title: "Lead Content Writer", 
-        description: "Main writer and organizer of main website content."
-      },
-      "luft": {
-        image: notfound, 
-        name: "Timothy Luft", 
-        title: "Storyboard Designer", 
-        description: "Created storyboard based on website content."
-      },
-      "mccauley": {
-        image: notfound, 
-        name: "Ryan McCauley", 
-        title: "Website Designer", 
-        description: "Designed website layout and functionality."
-      },
-      "park": {
-        image: park, 
-        name: "Min Su Park", 
-        title: "Web Developer", 
-        description: "Programmed and implemented website design."
-      },
-      "yao": {
-        image: notfound, 
-        name: "Rachel Yao", 
-        title: "Lead Cartoonist", 
-        description: "Sketched main comics of the site based on storyboard."
-      }
-    }
   }
 
   openDescription(lastname){
@@ -168,46 +141,85 @@ class Authors extends React.Component {
   }
 
   render() {
+    const lastNameMap = {
+      "henderson": {
+        image: henderson, 
+        name: "Naomi Henderson", 
+        title: "Head Content Writer", 
+        description: "Main writer and organizer of main website content."
+      },
+      "luft": {
+        image: luft, 
+        name: "Timothy Luft", 
+        title: "Storyboard Designer and Editor", 
+        description: "Created storyboard and edited final draft."
+      },
+      "mccauley": {
+        image: mccauley, 
+        name: "Ryan McCauley", 
+        title: "Website Designer", 
+        description: "Designed website layout and functionality."
+      },
+      "park": {
+        image: park, 
+        name: "Min Su Park", 
+        title: "Web Developer", 
+        description: "Programmed and implemented website design."
+      },
+      "yao": {
+        image: yao, 
+        name: "Rachel Yao", 
+        title: "Lead Cartoonist", 
+        description: "Sketched main comics of the site based on storyboard."
+      }
+    }
     let lastnames = ["henderson", "luft", "mccauley", "park", "yao"]
     let pictures = []
     for (const [index, lastname] of lastnames.entries()) {
       let selected = (this.state.selected === lastname);
-      pictures.push(<AuthorPicture selected={selected} lastname={lastname} onClick={this.openDescription.bind(this, lastname)} lastNameMap={this.lastNameMap} key={index}/>)
+      let picture = <AuthorPicture 
+                      selected={selected} 
+                      lastname={lastname}
+                      onClick={this.openDescription.bind(this, lastname)}
+                      map={lastNameMap[lastname]}
+                      key={index}
+                    />;
+      pictures.push(picture);
     }
     return (
       <div id="description-div">
         <div id="authors">
           {pictures}
         </div>
-        <Description lastname={this.state.selected} lastNameMap={this.lastNameMap}/>
+        <Description selected={this.state.selected} map={lastNameMap[this.state.selected]}/>
       </div>
     )
   }
 }
 
-function AuthorPicture({selected, lastname, onClick, lastNameMap}){
-  let image = lastNameMap[lastname].image;
-  let name = lastNameMap[lastname].name;
+function AuthorPicture({selected, onClick, map}){
+  let image = map.image;
+  let name = map.name;
   let selectedClass = selected ? "selected" : "";
   return (
     <button className={"author-button"} onClick={onClick}>
       <div className={"author-picture " + selectedClass}>
-        <img src={image} alt={lastname}/>
+        <img src={image} alt={map.name}/>
       </div>
       <p className={"author-name"}>{name}</p>
     </button>
   )
 }
 
-function Description({lastname, lastNameMap}){
+function Description({selected, map}){
   let hidden = null;
   let name = null;
   let title = null;
   let description = null;
-  if(lastname != null){
-    name = lastNameMap[lastname].name;
-    title = lastNameMap[lastname].title;
-    description = lastNameMap[lastname].description;
+  if(selected != null){
+    name = map.name;
+    title = map.title;
+    description = map.description;
     hidden = ""
   } else {
     hidden = "hidden"
@@ -222,22 +234,59 @@ function Description({lastname, lastNameMap}){
 }
 
 function Sources(){
+  const sources = [
+    {
+      title: "Gender Bias in the Purchase of STEM-Related Toys",
+      url: "https://www.asee.org/public/conferences/56/papers/14121/download",
+      shortcut: "toys",
+    },
+    {
+      title: "Gender Bias in the Purchase of STEM-Related Toys",
+      url: "https://www.asee.org/public/conferences/56/papers/14121/download",
+      shortcut: "toys1",
+    },
+    {
+      title: "Gender Bias in the Purchase of STEM-Related Toys",
+      url: "https://www.asee.org/public/conferences/56/papers/14121/download",
+      shortcut: "toys2",
+    },
+  ]
+  const sourceDivs = sources.map( (source, key) =>
+    <Source key={key} source={source}/>
+  );
   return (
     <div id="sources-div">
-      <ContentDiv otherClasses={"sources-content border"}>
-        <Title>Source 1</Title>
-        <TextContent></TextContent>
-      </ContentDiv>
-      <ContentDiv otherClasses={"sources-content border"}>
-        <Title>Source 2</Title>
-        <TextContent></TextContent>
-      </ContentDiv>
-      <ContentDiv otherClasses={"sources-content border"}>
-        <Title>Source 3</Title>
-        <TextContent></TextContent>
-      </ContentDiv>
+      {sourceDivs}
     </div>
-  )
+  );
+}
+
+class Source extends React.Component {
+  openLink(link){
+    window.open(link);
+  }
+
+  getTag(){
+    const url = window.location.href;
+    const tag_index = url.indexOf("#", 0);
+    return url.substring(tag_index+1);
+  }
+
+  render() {
+    const title = this.props.source.title;
+    const shortcut = this.props.source.shortcut;
+    const url = this.props.source.url;
+    const tag = this.getTag();
+    const selected = (tag === shortcut) ? "selected" : "";
+    return (
+      <button className="sources-button" onClick={this.openLink.bind(this, url)}>
+        <ContentDiv id={shortcut} otherClasses={"sources-content border " + selected}>
+          <Title>{title}</Title>
+          <TextContent></TextContent>
+        </ContentDiv>
+      </button>
+    )
+  }
 }
 
 // Go to top button
