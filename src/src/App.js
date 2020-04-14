@@ -18,8 +18,8 @@ function App() {
         <TopArea/>
         <Switch>
           <Route exact path="/" component={MainContent}/>
-          <Route path="/about" component={About}/>
-          <Route path="/sources"component={Sources}/>
+          <Route exact path="/about" component={About}/>
+          <Route exact path="/sources" component={Sources}/>
         </Switch>
         <GoTopButton/>
         <Footer/>
