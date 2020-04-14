@@ -14,4 +14,4 @@ import fdr_young from "./img/fdr_young.png";
 import math from "./img/math.png";
 import playhouse from "./img/playhouse.png";
 
-export {camera, flower, henderson, luft, mccauley, park, yao}
+export {camera, flower, henderson, luft, mccauley, park, yao, boy_toys, doll, fdr_old, fdr_young, math, playhouse}
