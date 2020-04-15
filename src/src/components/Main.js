@@ -126,11 +126,11 @@ class MainContent extends React.Component {
           </strong>
         </TextContent>
         <TextContent>
-          If only toy advertisers back then knew the effects that this would have on the future of STEM. Hmmm, what do I mean you ask? What if children today all dressed in the standardized children’s clothes of the 1800s and What if boys and girls all played with the same toys?
+          If only toy advertisers back then knew the effects that this would have on the future of STEM. Hmmm, what do I mean you ask? What if children today all dressed in the standardized children’s clothes of the 1800s and what if boys and girls all played with the same toys?
         </TextContent>
         <ComicPanel images={dollhouse} />
         <TextContent>
-          We would find that boys and girls aren’t that different in the early stages of their lives, if at all. This even applies to the development of math skills. (Link study Carnegie Mellon Study). This is a pretty cool new finding, since a number of scientists and public figures have cited neuroscience studies as explaining the gender disparity in STEM. 
+          We would find that boys and girls aren’t that different in the early stages of their lives, if at all. This even applies to the development of math skills. This is a pretty cool new finding, since a number of scientists and public figures have cited neuroscience studies as explaining the gender disparity in STEM. 
         </TextContent>
         <TextContent>
           <SourceLink source_id="brain" return_id="brain-activity">
@@ -176,14 +176,14 @@ class MainContent extends React.Component {
           </strong>
         </TextContent>
         <TextContent>
-          In response to a 2016  conference about gender stereotypes in toys and media, Target has announced that they were getting rid of signs labeling toys for girls or for boys. Experts say that babies don’t show preference for certain toys over others and that it’s only once children learn about their own gender that they gain preferences. 
+          In response to a 2016  conference about gender stereotypes in toys and media, Target has announced that they were getting rid of signs labeling toys for girls or for boys. Experts say that babies don’t show preference for certain toys over others and that it’s only once children learn about their own gender that they gain preferences. So, the way toys are marketed may have an influence in the development of a child’s toy preference.  
           <SourceLink source_id="harm" return_id="preference">
-            So, the way toys are marketed may have an influence in the development of a child’s toy preference.  
+            Source - the guardian. 
           </SourceLink>
-          Source - the guardian. Today, the UK’s “Let Toys Be Toys” campaign has expanded by making its mission to get both toy and publishing industries to “stop limiting children’s interests by promoting some toys and books and boys as only suitable for girls, and others only for boys. 
+          Today, the UK’s “Let Toys Be Toys” campaign has expanded by making its mission to get both toy and publishing industries to “stop limiting children’s interests by promoting some toys and books as only suitable for girls, and others only for boys. 
         </TextContent>
         <TextContent>
-          I don’t have an exact answer to this question but maybe we can begin to find the answer to if we “let toys be toys,” 
+          I don’t have an exact answer to this question but maybe we can begin to find the answer if we “let toys be toys,” 
         </TextContent>
         <Video/>
         <ReactTooltip place="right" effect="solid"/>
