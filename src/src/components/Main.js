@@ -90,7 +90,7 @@ class MainContent extends React.Component {
         </Title>
         <TextContent>
           <strong>
-            What if boys and girls were raised to play with toys marketed toward the opposite gender? Would it affect their lives in a big way, if at all?
+            What if boys and girls were raised to play with toys marketed toward the opposite gender? Researchers say it might change the jobs we might end up getting as adults.
           </strong>
         </TextContent>
         <ComicPanel images={fdr_old} alt={"FDR when he was old"}/>
@@ -180,7 +180,7 @@ class MainContent extends React.Component {
           <SourceLink source_id="harm" return_id="preference">
             Source - the guardian. 
           </SourceLink>
-          Today, the UK’s “Let Toys Be Toys” campaign has expanded by making its mission to get both toy and publishing industries to “stop limiting children’s interests by promoting some toys and books as only suitable for girls, and others only for boys. 
+          Today, the UK’s “Let Toys Be Toys” campaign has expanded by making its mission to get both toy and publishing industries to “stop limiting children’s interests by promoting some toys and books as only suitable for girls, and others only for boys."
         </TextContent>
         <TextContent>
           I don’t have an exact answer to this question but maybe we can begin to find the answer if we “let toys be toys,” 
